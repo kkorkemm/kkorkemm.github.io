@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="fonts/fonts.css">
+    <script src="https://kit.fontawesome.com/6fb6bb1028.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <title>ТОО НИЦ КТП</title>
+</head>
+<body>
+   <header>
+    <div class="container">
+        <div class="header__content">
+            <a href="#">
+                <img src="images/logo_no_shades.png" class="img__logo">
+            </a>
+            <nav class="nav" id="nav">
+                <ul class="header-nav">
+                    <li><a href="#spectrum" class="nav__link">Спектр деятельности</a></li>
+                    <li><a href="#directions" class="nav__link">Направления разработок</a></li>
+                    <li><a href="#clients" class="nav__link">Заказчики</a></li>
+                    <li><a href="#partners" class="nav__link">Партнеры</a></li>
+                    <li><a href="#projects" class="nav__link">Проекты</a></li>
+                    <li><a href="#media" class="nav__link">В медиа</a></li>
+                    <li><a href="#contacts" class="nav__link">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+   </header> 
+
+   <section class="main" style="margin-top: 40px;">
+    <div class="container">
+        <div class="main__content">
+            <img src="images/logo.png" alt=""  class="main__logo">
+            <div class="main__title">
+                <img src="images/title.png" alt="" style="width: 800px;">
+                 <h1 class="main__slogan">
+                    Клиентоориентированность - стратегия будущего!
+                </h1>
+            </div>
+        </div>
+    </div>
+   </section>
+
+   <section class="about">
+    <div class="container">
+        <div class="about__content">
+            <div class="about__item" style="width: 220px;">
+                Более <p class="about__item-high">17 лет</p> на рынке научно-технических разработок
+            </div>
+            <div class="about__item" style="width: 200px;">
+                Более <p class="about__item-high">25 крупных</p> исследований и проектов
+            </div>
+            <div class="about__item" style="width: 350px">
+                <p class="about__item-high">Заказчики - </p> крупные отечественные и зарубежные транспортные и промышленные компании 
+            </div>
+            <div class="about__item" style="width: 350px;">
+                Правообладатель <p class="about__item-high">перспективных</p> научно-методологических разработок в транспортном секторе
+            </div>
+        </div>
+    </div>
+   </section>
+
+   <section class="spectrum" id="spectrum">
+    <div class="container">
+        <h2 class="container__title">Спектр научно-технической деятельности</h2>
+
+        <div class="wrapper">
+            <div class="wrapper__container">
+                <input type="radio" name="slide" id="c1" checked>
+                <label for="c1" class="card">
+                    <div class="row">
+                        <div class="icon">1</div>
+                        <div class="description">
+                            <h2>Фундаментальные исследования</h2>
+                            <p>в области организации перевозок</p>
+                        </div>
+                    </div>
+                </label>
+                <input type="radio" name="slide" id="c2" >
+                <label for="c2" class="card">
+                    <div class="row">
+                        <div class="icon">2</div>
+                        <div class="description">
+                            <h2>Аналитика и Моделирование</h2>
+                            <p>транспортных процессов</p>
+                        </div>
+                    </div>
+                </label>
+                <input type="radio" name="slide" id="c3" >
+                <label for="c3" class="card">
+                    <div class="row">
+                        <div class="icon">3</div>
+                        <div class="description">
+                            <h2>Оптимизация</h2>
+                            <p>транспортных процессов</p>
+                        </div>
+                    </div>
+                </label>
+                <input type="radio" name="slide" id="c4" >
+                <label for="c4" class="card">
+                    <div class="row">
+                        <div class="icon">4</div>
+                        <div class="description">
+                            <h2>Перспективные технологии</h2>
+                            <p>в перевозочном процессе</p>
+                        </div>
+                    </div>
+                </label>
+                <input type="radio" name="slide" id="c5" >
+                <label for="c5" class="card">
+                    <div class="row">
+                        <div class="icon">5</div>
+                        <div class="description">
+                            <h2>Интеллектуальные системы</h2>
+                            <p>уравнения и принятия решений</p>
+                        </div>
+                    </div>
+                </label>
+            </div>
+        </div>
+    </div>
+   </section>
+
+   <section class="directions" id="directions">
+    <div class="container">
+        <h2 class="container__title">Текущие направления научно-технических разработок</h2>
+        <div class="directions__content">
+            <div id="slider">
+                <input type="radio" name="slider" id="slide1" checked>
+                <input type="radio" name="slider" id="slide2">
+                <input type="radio" name="slider" id="slide3">
+                <input type="radio" name="slider" id="slide4">
+
+                <div id="bullets">
+                    <label for="slide1"></label>
+                    <label for="slide2"></label>
+                    <label for="slide3"></label>
+                    <label for="slide4"></label>
+                 </div>
+
+                <div id="slides">
+                   <div id="overflow">
+                      <div class="inner">
+                         <div class="direction-slide slide_1">
+                            <div class="slide-content">
+                               <h3>Фундаментальные исследования в области железнодорожного транспорта</h3>
+                               <div class="slide-content-text">
+                                <div class="slide-content-item">
+                                    <img src="images/point.png" alt="">
+                                    <p>Основы клиентоориентированной технологии на железнодорожном транспорте</p>
+                                   </div>
+                                   <div class="slide-content-item">
+                                    <img src="images/point.png" alt="">
+                                    <p>Целевая модель организации грузоперевозок на сети железных дорог</p>
+                                   </div>
+                                   <div class="slide-content-item">
+                                    <img src="images/point.png" alt="">
+                                    <p>Новая Система эксплуатационных показателей и тарифообразования</p>
+                                   </div>
+                               </div>
+                            </div>
+                         </div>
+                         <div class="direction-slide slide_2">
+                            <div class="slide-content">
+                                <h3>Организация и управление процессами перевозок</h3>
+                                <div class="slide-content-text">
+                                    <div class="slide-content-item">
+                                        <img src="images/point.png" alt="">
+                                        <p>Перспективные технологии в области организации грузоперевозок на сети железных дорог</p>
+                                       </div>
+                                       <div class="slide-content-item">
+                                        <img src="images/point.png" alt="">
+                                        <p>Методы повышения пропускной и провозной способностей транзитных коридоров и железнодорожных линий</p>
+                                       </div>
+                                   </div>
+                            </div>
+                         </div>
+                         <div class="direction-slide slide_3">
+                            <div class="slide-content">
+                                <h3>Аналитика и моделирование процессов перевозок</h3>
+                                <div class="slide-content-text">
+                                    <div class="slide-content-item">
+                                        <img src="images/point.png" alt="">
+                                        <p>Анализ и оценка пропускной и перерабатывающей способностей транспортно-логистических структур</p>
+                                       </div>
+                                       <div class="slide-content-item">
+                                        <img src="images/point.png" alt="">
+                                        <p>Имитационное моделирование станционных процессов и графика движения поездов &#40;разработка  ГДП &#171;по расписанию&#187;&#41;</p>
+                                       </div>
+                                   </div>
+                            </div>
+                         </div>
+                         <div class="direction-slide slide_4">
+                            <div class="slide-content">
+                                <h3>Формирование перспективного направления развития локомотивного парка</h3>
+                                <div class="slide-content-text">
+                                    <div class="slide-content-item">
+                                        <img src="images/point.png" alt="">
+                                        <p>Анализ и оценка организации тяги поездов на участках и маневровой работы на станциях сети железных дорог АО &#171;НК &#171;КТЖ&#187;</p>
+                                       </div>
+                                       <div class="slide-content-item">
+                                        <img src="images/point.png" alt="">
+                                        <p>Комплексная оценка и перспективы развития парка магистральных и станционных локомотивов</p>
+                                       </div>
+                                   </div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+        </div>
+    </div>
+   </section>
+
+   <section class="clients" id="clients">
+    <div class="container">
+        <h2 class="container__title">Крупные заказчики</h2>
+        <div class="customer-logos slider">
+
+            <div class="slide">
+                <img src="images/clients/ktz.png" style="width: 100px;"
+                title="Акционерное общество «Национальная компания «Қазақстан темір жолы» (АО «НК «КТЖ»), РК">
+            </div>
+            <div class="slide">
+                <img src="images/clients/ktz-gp.jpg" style="width: 100px;"
+                title="Товарищество с ограниченной ответственностью «КТЖ – Грузовые перевозки» (ТОО «КТЖ – ГП»), РК">
+            </div>
+            <div class="slide">
+                <img src="images/clients/wabtec.png" style="width: 200px;"
+                title="Wabtec Corporation, США">
+            </div>
+            <div class="slide">
+                <img src="images/clients/alstom.png" style="width: 200px; margin-top: 30px;"
+                title="Компания Alstom, Франция">
+            </div>
+            <div class="slide">
+                <img src="images/clients/uic.png" style="width: 150px;"
+                title="Международный союз железных дорог (МСЖД - UIC)">
+            </div>
+            <div class="slide">
+                <img src="images/clients/osjd.jpg" style="width: 100px;"
+                title="Организация сотрудничества железных дорог (ОСЖД)">
+            </div>
+            <div class="slide">
+                <img src="images/clients/lianyungang.png" style="width: 100px;"
+                title="Группа компаний «Порт Ляньюньган», КНР">
+            </div>
+        </div>
+    </div>
+   </section>
+
+   <section class="partners" id="partners">
+    <div class="container">
+        <h2 class="container__title">Крупные партнеры</h2>
+        <div class="customer-logos slider">
+
+            <div class="slide">
+                <img src="images/partners/tsdi.png" 
+                title="Третий железнодорожный проектно-изыскательный институт (TSDI), КНР, г. Тяньзинь">
+            </div>
+            <div class="slide">
+                <img src="images/partners/china_institute.png" 
+                title="Третий водный проектно-изыскательный институт, КНР, г. Шанхай">
+            </div>
+            <div class="slide">
+                <img src="images/partners/condor.jpg" 
+                title="Компания «Condor Energies Ins.», Канада, г. Калгари">
+            </div>
+            <div class="slide">
+                <img src="images/partners/satbayev.jpg" 
+                title="Казахский национальный технический университет им. К.И.Сатпаева, РК, г. Алматы">
+            </div>
+            <div class="slide">
+                <img src="images/partners/transtelesoft.png" 
+                title="ООО «ТрансТелеСофт», РФ, г. Москва">
+            </div>
+            <div class="slide">
+                <img src="images/partners/signal1520.png" 
+                title="ООО «1520 Сигнал», РФ, г. Москва">
+            </div>
+            <div class="slide">
+                <img src="images/partners/greywolf.png" 
+                title="Консалтинговая компания «Grey Wolf», РК, г. Астана">
+            </div>           
+        </div>
+    </div>
+   </section>
+
+   <section class="projects" id="projects">
+    <div class="container">
+        <h2 class="container__title">Крупные реализованные проекты</h2>
+        <div class="projects__title">
+            <h3>Фундаментальные исследования</h3>
+            <h3 style="font-family: 'Roboto-LightItalic';">Инициативные работы</h3>
+        </div>
+        <div class="projects__initiative">
+            <div class="projects__init-item">
+                <p>Концепция организации грузоперевозок на сети железных дорог АО «НК «Қазақстан темір  жолы»</p>
+            </div>
+            <div class="projects__init-item">
+                <p>Целевая модель организации грузоперевозок на сети железных дорог АО «НК «Қазақстан темір  жолы»</p>
+            </div>
+            <div class="projects__init-item">
+                <p>Новая Система эксплуатационных показателей и тарифо-образования на сети железных дорог</p>
+            </div>
+        </div>
+        <div class="projects__title">
+            <h3>Проекты для заказчиков</h3>
+        </div>
+        <div class="projects__types">
+            <input type="radio" id="radio__consalting" name="project" checked/>
+            <label for="radio__consalting">
+                Научно-исследовательские и консалтинговые исследования
+            </label>
+
+            <input type="radio" id="radio__economy"  name="project"/>
+            <label for="radio__economy">
+                Технико-экономические обоснования (оценки), инжиниринговые услуги
+            </label>
+
+            <input type="radio" id="radio__opt_log"  name="project"/>
+            <label for="radio__opt_log">
+                Оптимизация транспортно-логистических процессов
+            </label>
+
+            <input type="radio" id="radio__opt"  name="project"/>
+            <label for="radio__opt">
+                Оптимизация транспортных процессов
+            </label>
+
+            <input type="radio" id="radio__model"  name="project"/>
+            <label for="radio__model">
+                Моделирование, центр управления и автоматизация
+            </label>
+
+            <input type="radio" id="radio__park"  name="project"/>
+            <label for="radio__park">
+                Научно-исследовательские работы в области развития парка локомотивов
+            </label>
+
+                <div class="projects__client-item consalting">
+                    <p>Исследование пропускной способности железных дорог Азербайджана и Грузии по направлению морских портов</p>
+                    <div class="projects__forclient">
+                        <p class="projects__clien-name">Заказчик</p>
+                        <p>ТОО «Истком Транс»</p>
+                    </div>
+                </div>
+                <div class="projects__client-item consalting">
+                    <p>Программа развития железнодорожного комплекса промышленного предприятия</p>
+                    <div class="projects__forclient">
+                        <p class="projects__clien-name">Заказчик</p>
+                        <p>АО «Арселор МитталТемиртау»</p>
+                    </div>
+                </div>
+                <div class="projects__client-item consalting">
+                    <p>Предпроектное исследование строительства Сухого порта на международном стыке</p>
+                    <div class="projects__forclient">
+                        <p class="projects__clien-name">Заказчик</p>
+                        <p>ТОО «РТС»</p>
+                    </div>
+                </div>
+                <div class="projects__client-item consalting">
+                    <p>Предпроектное исследование по развитию транспортно-логистического комплекса в зоне притяжения порта Курык</p>
+                    <div class="projects__forclient">
+                        <p class="projects__clien-name">Заказчик</p>
+                        <p>ТОО «А+А Казахстан»</p>
+                    </div>
+                </div>
+                <div class="projects__client-item consalting" style="font-size: 1.1rem;">
+                    <p>Методы повышения пропускной и провозной способности транзитных коридоров и железнодорожных линий АО «НК «КТЖ» в новых условиях организации движения поездов</p>
+                    <div class="projects__forclient">
+                        <p class="projects__clien-name">Заказчик</p>
+                        <p>ТОО «КТЖ-ГП»</p>
+                    </div>
+                </div>
+                <div class="projects__client-item economy">
+                    <p>Строительство контейнерного терминала в морском порту Ляньюньган (КНР)</p>
+                    <div class="projects__forclient">
+                        <p class="projects__clien-name">Заказчик</p>
+                        <p>АО «НК «КТЖ»</p>
+                    </div>
+                </div>
+                <div class="projects__client-item economy" style="font-size:1.1rem;">
+                    <p>Строительство международной транспортно-логистической зоны стран Шанхайской организации содружества (ШОС) в морском порту Ляньюньган (КНР)</p>
+                    <div class="projects__forclient">
+                        <p class="projects__clien-name">Заказчик</p>
+                        <p>ГК «Порт Ляньюньган»</p>
+                    </div>
+                </div>
+                <div class="projects__client-item economy">
+                    <p>Оценка строителей Транскаспийского моста смешанного типа (железнодорожный-автотранспортный)</p>
+                    <div class="projects__forclient">
+                        <p class="projects__clien-name">Заказчики</p>
+                        <p>АО «НК «КТЖ», ГК «Порт Ляньюньган»</p>
+                    </div>
+                </div>
+                <div class="projects__client-item economy">
+                    <p>Единые нормы допускаемых скоростей движения подвижного состава по железнодорожным путям колеи 1520 (1524) мм</p>
+                    <div class="projects__forclient">
+                        <p class="projects__clien-name">Заказчик</p>
+                        <p>ОСЖД</p>
+                    </div>
+                </div>
+                <div class="projects__client-item economy">
+                    <p>Повышение квалификации инженерно-технического персонала по проектированию магистральных электровозов</p>
+                    <div class="projects__forclient">
+                        <p class="projects__clien-name">Заказчик</p>
+                        <p>Компания Alstom</p>
+                    </div>
+                </div>
+                <div class="projects__client-item opt_log">
+                    <p>Оптимизация поставок серной кислоты на рудодобывающие предприятия</p>
+                    <div class="projects__forclient">
+                        <p class="projects__clien-name">Заказчик</p>
+                        <p>НАК «КазАтомПром»</p>
+                    </div>
+                </div>
+                <div class="projects__client-item opt_log">
+                    <p>Организация и оптимизация перевозок зерновых грузов на экспорт</p>
+                    <div class="projects__forclient">
+                        <p class="projects__clien-name">Заказчик</p>
+                        <p>ТОО «Kazmeal»</p>
+                    </div>
+                </div>
+                <div class="projects__client-item opt">
+                    <p>Оптимизация транспортных процессов горно-добывающих предприятий</p>
+                    <div class="projects__forclient">
+                        <p class="projects__clien-name">Заказчик</p>
+                        <p>АО «ССГПО»</p>
+                    </div>
+                </div>
+                <div class="projects__client-item opt">
+                    <p>Оптимизация транспортно-логистических процессов предприятий строительных материалов</p>
+                    <div class="projects__forclient">
+                        <p class="projects__clien-name">Заказчик</p>
+                        <p>АО «Экотон+»</p>
+                    </div>
+                </div>
+                <div class="projects__client-item opt">
+                    <p>Оптимизация маневрового обслуживания подъездных путей крупных предприятий промышленной зоны</p>
+                    <div class="projects__forclient">
+                        <p class="projects__clien-name">Заказчик</p>
+                        <p>ТОО «Тобол Транс»</p>
+                    </div>
+                </div>
+                <div class="projects__client-item model">
+                    <p>Разработка и внедрение Центра управления перевозок (ЦУП) поставок грузов на рудодобывающие предприятия</p>
+                    <div class="projects__forclient">
+                        <p class="projects__clien-name">Заказчик</p>
+                        <p>НАК «КазАтомПром»</p>
+                    </div>
+                </div>
+                <div class="projects__client-item model">
+                    <p>Разработка Программных приложений для АСУ оперативного регулирования схем пассажирских поездов</p>
+                    <div class="projects__forclient">
+                        <p class="projects__clien-name">Заказчик</p>
+                        <p>АО «Пассажирские перевозки»</p>
+                    </div>
+                </div>
+                <div class="projects__client-item model">
+                    <p>Автоматизация процессов замедления движения и закрепления вагонов на железнодорожных путях</p>
+                    <div class="projects__forclient">
+                        <p class="projects__clien-name">Заказчик</p>
+                        <p>АО «ТНК «Казхром»</p>
+                    </div>
+                </div>
+                <div class="projects__client-item park">
+                    <p>Альтернативные виды топлива будущего и перспективы их использования в тяге поездов и маневровой работе на сети железных дорог АО «НК «КТЖ»</p>
+                    <div class="projects__forclient">
+                        <p class="projects__clien-name">Заказчики</p>
+                        <p>МСЖД - UIC, АУЭС</p>
+                    </div>
+                </div>
+                <div class="projects__client-item park">
+                    <p>Оценка перевода магистрального тепловоза ТЭ33А на газомоторное топливо (дизельное топливо + СПГ)</p>
+                    <div class="projects__forclient">
+                        <p class="projects__clien-name">Заказчик</p>
+                        <p>GE Transportation</p>
+                    </div>
+                </div>
+                <div class="projects__client-item park">
+                    <p>Оценка эксплуатации тепловоза ТЭ33А на газомоторном топливе на полигоне железной дороги АО «НК «КТЖ»</p>
+                    <div class="projects__forclient">
+                        <p class="projects__clien-name">Заказчик</p>
+                        <p>Wabtec Corporation</p>
+                    </div>
+                </div>
+                <div class="projects__client-item park">
+                    <p>Перспективы развития парка магистральных грузовых электровозов на сети железных дорог АО «НК «КТЖ»</p>
+                    <div class="projects__forclient">
+                        <p class="projects__clien-name">Заказчик</p>
+                        <p>Компания Alstom</p>
+                    </div>
+                </div>
+                <div class="projects__client-item park">
+                    <p>Перспективы развития парка магистральных грузовых тепловозов на сети железных дорог АО «НК «КТЖ»</p>
+                    <div class="projects__forclient">
+                        <p class="projects__clien-name">Заказчик</p>
+                        <p>Wabtec Corporation</p>
+                    </div>
+                </div>
+                <div class="projects__client-item park">
+                    <p>Оценка перспективы развития парка маневровых (станционных) локомотивов на сети железных дорог АО «НК «КТЖ»</p>
+                    <div class="projects__forclient">
+                        <p class="projects__clien-name">Заказчик</p>
+                        <p>ТОО «Kaz Rail Services»</p>
+                    </div>
+                </div>
+                <div class="projects__client-item park">
+                    <p>Разработка автоматизированной системы мониторинга расхода топлива (АСМТ) на магистральных локомотивах</p>
+                    <div class="projects__forclient">
+                        <p class="projects__clien-name">Заказчик</p>
+                        <p>АО «ЮНИКОМПЕКС»</p>
+                    </div>
+                </div>
+        </div>
+    </div>
+   </section>
+
+   <section class="media" id="media">
+    <div class="container">
+        <h2 class="container__title">В медиа</h2>
+        <div class="media__content">
+            <iframe class="media__content-item" src="https://www.youtube.com/embed/smc1CXEOFQU">
+            </iframe>
+            <iframe class="media__content-item" src="https://www.youtube.com/embed/ThL3eDiTXKg?t=1068">
+            </iframe>
+            <iframe class="media__content-item" src="https://www.youtube.com/embed/AGw0IK9syqQ">
+            </iframe>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    </div>
+   </section>
+
+   <footer id="contacts">
+    <div class="container">
+        <div class="footer__content">
+            <a href="#">
+                <img src="images/logo_no_shades.png" class="img__logo">
+            </a>
+        <div class="footer__info">
+            <nav class="nav" id="nav">
+                <ul class="header-nav">
+                    <li><a href="#spectrum" class="nav__link">Спектр деятельности</a></li>
+                    <li><a href="#directions" class="nav__link">Направления разработок</a></li>
+                    <li><a href="#clients" class="nav__link">Заказчики</a></li>
+                    <li><a href="#partners" class="nav__link">Партнеры</a></li>
+                    <li><a href="#projects" class="nav__link">Проекты</a></li>
+                    <li><a href="#media" class="nav__link">В медиа</a></li>
+                </ul>
+            </nav>
+            <div class="footer__text">
+                <p>Республика Казахстан, г. Астана, ул. Рыскулбекова, 13</p>
+                <p>email: <a href="mailto: nic_ktp@mail.ru">nic_ktp@mail.ru</a></p>
+            </div>
+            <p id="footer__years"></p>
+        </div>
+        </div>
+    </div>
+   </footer>
+
+</body>
+</html>
+
+<script type="text/javascript">
+    // дата в футере
+    document.getElementById('footer__years').innerHTML = '2007 - ' + new Date().getFullYear();   
+
+    // clients and partners 
+    $(document).ready(function(){
+    $('.customer-logos').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 1500,
+        arrows: false,
+        dots: false,
+        pauseOnHover: false,
+        responsive: [{
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 4
+            }
+        }, {
+            breakpoint: 520,
+            settings: {
+                slidesToShow: 3
+            }
+        }]
+    });
+});
+
+// media ------------------------------------
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("media__content-item");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+</script>
