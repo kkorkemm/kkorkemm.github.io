@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="fonts/fonts.css">
-    <script src="https://kit.fontawesome.com/6fb6bb1028.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -25,7 +24,7 @@
                     <li><a href="#clients" class="nav__link">Заказчики</a></li>
                     <li><a href="#partners" class="nav__link">Партнеры</a></li>
                     <li><a href="#projects" class="nav__link">Проекты</a></li>
-                    <li><a href="#media" class="nav__link">В медиа</a></li>
+                    <li><a href="#media" class="nav__link">Медиа</a></li>
                     <li><a href="#contacts" class="nav__link">Контакты</a></li>
                 </ul>
             </nav>
@@ -33,12 +32,12 @@
     </div>
    </header> 
 
-   <section class="main" style="margin-top: 40px;">
+   <section class="main">
     <div class="container">
         <div class="main__content">
             <img src="images/logo.png" alt=""  class="main__logo">
             <div class="main__title">
-                <img src="images/title.png" alt="" style="width: 800px;">
+                <img src="images/title.png" alt="">
                  <h1 class="main__slogan">
                     Клиентоориентированность - стратегия будущего!
                 </h1>
@@ -50,16 +49,16 @@
    <section class="about">
     <div class="container">
         <div class="about__content">
-            <div class="about__item" style="width: 220px;">
+            <div class="about__item about__item-first">
                 Более <p class="about__item-high">17 лет</p> на рынке научно-технических разработок
             </div>
-            <div class="about__item" style="width: 200px;">
+            <div class="about__item about__item-second">
                 Более <p class="about__item-high">25 крупных</p> исследований и проектов
             </div>
-            <div class="about__item" style="width: 350px">
+            <div class="about__item about__item-third">
                 <p class="about__item-high">Заказчики - </p> крупные отечественные и зарубежные транспортные и промышленные компании 
             </div>
-            <div class="about__item" style="width: 350px;">
+            <div class="about__item about__item-third">
                 Правообладатель <p class="about__item-high">перспективных</p> научно-методологических разработок в транспортном секторе
             </div>
         </div>
@@ -118,7 +117,7 @@
                         <div class="icon">5</div>
                         <div class="description">
                             <h2>Интеллектуальные системы</h2>
-                            <p>уравнения и принятия решений</p>
+                            <p>управления и принятия решений</p>
                         </div>
                     </div>
                 </label>
@@ -138,10 +137,10 @@
                 <input type="radio" name="slider" id="slide4">
 
                 <div id="bullets">
-                    <label for="slide1"></label>
-                    <label for="slide2"></label>
-                    <label for="slide3"></label>
-                    <label for="slide4"></label>
+                    <label for="slide1">1</label>
+                    <label for="slide2">2</label>
+                    <label for="slide3">3</label>
+                    <label for="slide4">4</label>
                  </div>
 
                 <div id="slides">
@@ -298,7 +297,7 @@
         <h2 class="container__title">Крупные реализованные проекты</h2>
         <div class="projects__title">
             <h3>Фундаментальные исследования</h3>
-            <h3 style="font-family: 'Roboto-LightItalic';">Инициативные работы</h3>
+            <h4>Инициативные работы</h4>
         </div>
         <div class="projects__initiative">
             <div class="projects__init-item">
@@ -313,6 +312,7 @@
         </div>
         <div class="projects__title">
             <h3>Проекты для заказчиков</h3>
+            <h4>по категориям:</h4>
         </div>
         <div class="projects__types">
             <input type="radio" id="radio__consalting" name="project" checked/>
@@ -373,7 +373,7 @@
                         <p>ТОО «А+А Казахстан»</p>
                     </div>
                 </div>
-                <div class="projects__client-item consalting" style="font-size: 1.1rem;">
+                <div class="projects__client-item consalting projects__long-text">
                     <p>Методы повышения пропускной и провозной способности транзитных коридоров и железнодорожных линий АО «НК «КТЖ» в новых условиях организации движения поездов</p>
                     <div class="projects__forclient">
                         <p class="projects__clien-name">Заказчик</p>
@@ -387,7 +387,7 @@
                         <p>АО «НК «КТЖ»</p>
                     </div>
                 </div>
-                <div class="projects__client-item economy" style="font-size:1.1rem;">
+                <div class="projects__client-item economy projects__long-text">
                     <p>Строительство международной транспортно-логистической зоны стран Шанхайской организации содружества (ШОС) в морском порту Ляньюньган (КНР)</p>
                     <div class="projects__forclient">
                         <p class="projects__clien-name">Заказчик</p>
@@ -526,14 +526,22 @@
 
    <section class="media" id="media">
     <div class="container">
-        <h2 class="container__title">В медиа</h2>
+        <h2 class="container__title">Медиа</h2>
         <div class="media__content">
+            <video class="media__content-item" controls autoplay muted>
+                <source src="videos/rzd.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
             <iframe class="media__content-item" src="https://www.youtube.com/embed/smc1CXEOFQU">
             </iframe>
             <iframe class="media__content-item" src="https://www.youtube.com/embed/ThL3eDiTXKg?t=1068">
             </iframe>
             <iframe class="media__content-item" src="https://www.youtube.com/embed/AGw0IK9syqQ">
             </iframe>
+            <video class="media__content-item" controls autoplay muted>
+                <source src="videos/dry port.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
@@ -554,7 +562,7 @@
                     <li><a href="#clients" class="nav__link">Заказчики</a></li>
                     <li><a href="#partners" class="nav__link">Партнеры</a></li>
                     <li><a href="#projects" class="nav__link">Проекты</a></li>
-                    <li><a href="#media" class="nav__link">В медиа</a></li>
+                    <li><a href="#media" class="nav__link">Медиа</a></li>
                 </ul>
             </nav>
             <div class="footer__text">
@@ -585,14 +593,14 @@
         dots: false,
         pauseOnHover: false,
         responsive: [{
-            breakpoint: 768,
+            breakpoint: 940,
             settings: {
-                slidesToShow: 4
+                slidesToShow: 2
             }
         }, {
             breakpoint: 520,
             settings: {
-                slidesToShow: 3
+                slidesToShow: 1
             }
         }]
     });
@@ -621,4 +629,12 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
 }
+
+// burger
+let nav = $(".nav");
+
+$(".burger").on("click", function(event) {
+    event.preventDefault();
+    nav.toggleClass("show"); 
+})
 </script>
