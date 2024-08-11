@@ -513,10 +513,9 @@ input {
 /* Projects ---------------------------*/
 .projects {
     background-color: whitesmoke;
-    padding-top: 50px;
+    padding-top: 40px;
     padding-bottom: 90px;
 }
-
 
 .projects__title {
     color: #E46C0A;
@@ -535,6 +534,7 @@ input {
     justify-content: space-around;
     row-gap: 30px;
     flex-wrap: wrap;
+    margin: 10px;
 }
 
 .projects__init-item, .projects__client-item {
@@ -547,7 +547,7 @@ input {
     align-content: top;
 }
 
-.projects__long-text {
+.projects__long-text p {
     font-size: 1.1rem;
 }
 
@@ -591,63 +591,68 @@ input {
     background: url(../images/projects/park.png) center no-repeat #6FA0DB;
 }
 
-.projects__types label {
-    font-family: 'Roboto-Light';
-    font-size: 1rem;
-    padding: 5px;
-    width: 330px;
+  /* Core styles/functionality */
+  .tab input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
+  .tab__content {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.35s;
+  }
+  .tab input:checked ~ .tab__content {
+    max-height: 400rem;
+  }
+  
+  /* Visual styles */
+  .accordion {
+    color: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+  .tab__label,
+  .tab__close {
+    display: flex;
+    color: #aaa;
+    background: #dddddd;
     cursor: pointer;
+  }
+  .tab__label {
+    justify-content: space-between;
+    padding: 1rem;
+  }
+  .tab__label::after {
+    content: "\276F";
+    width: 1em;
+    height: 1em;
     text-align: center;
-}
-
-input[type="radio"][id="radio__consalting"]:checked + label,
-input[type="radio"][id="radio__economy"]:checked + label,
-input[type="radio"][id="radio__opt_log"]:checked + label,
-input[type="radio"][id="radio__opt"]:checked + label,
-input[type="radio"][id="radio__model"]:checked + label,
-input[type="radio"][id="radio__park"]:checked + label
-{
-    color: #E46C0A;
-}
-
-input[type="radio"][id="radio__consalting"]:checked ~ .economy, 
-input[type="radio"][id="radio__consalting"]:checked ~ .opt_log,
-input[type="radio"][id="radio__consalting"]:checked ~ .opt,
-input[type="radio"][id="radio__consalting"]:checked ~ .model,
-input[type="radio"][id="radio__consalting"]:checked ~ .park,
-
-input[type="radio"][id="radio__economy"]:checked ~ .consalting, 
-input[type="radio"][id="radio__economy"]:checked ~ .opt_log,
-input[type="radio"][id="radio__economy"]:checked ~ .opt,
-input[type="radio"][id="radio__economy"]:checked ~ .model,
-input[type="radio"][id="radio__economy"]:checked ~ .park,
-
-input[type="radio"][id="radio__opt_log"]:checked ~ .economy, 
-input[type="radio"][id="radio__opt_log"]:checked ~ .consalting,
-input[type="radio"][id="radio__opt_log"]:checked ~ .opt,
-input[type="radio"][id="radio__opt_log"]:checked ~ .model,
-input[type="radio"][id="radio__opt_log"]:checked ~ .park,
-
-input[type="radio"][id="radio__opt"]:checked ~ .economy, 
-input[type="radio"][id="radio__opt"]:checked ~ .consalting,
-input[type="radio"][id="radio__opt"]:checked ~ .opt_log,
-input[type="radio"][id="radio__opt"]:checked ~ .model,
-input[type="radio"][id="radio__opt"]:checked ~ .park,
-
-input[type="radio"][id="radio__model"]:checked ~ .economy, 
-input[type="radio"][id="radio__model"]:checked ~ .consalting,
-input[type="radio"][id="radio__model"]:checked ~ .opt_log,
-input[type="radio"][id="radio__model"]:checked ~ .opt,
-input[type="radio"][id="radio__model"]:checked ~ .park,
-
-input[type="radio"][id="radio__park"]:checked ~ .economy, 
-input[type="radio"][id="radio__park"]:checked ~ .consalting,
-input[type="radio"][id="radio__park"]:checked ~ .opt_log,
-input[type="radio"][id="radio__park"]:checked ~ .opt,
-input[type="radio"][id="radio__park"]:checked ~ .model 
-{
-    display: none;
-}
+    transform: rotate(90deg);
+    transition: all 0.35s;
+  }
+  .tab input:checked + .tab__label::after {
+    transform: rotate(270deg);
+  }
+  .tab__close {
+    justify-content: flex-end;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+  }
+  
+  /* Arrow animation */
+  .tab input:not(:checked) + .tab__label:hover::after {
+    animation: bounce .5s infinite;
+  }
+  @keyframes bounce {
+    25% {
+      transform: rotate(90deg) translate(.25rem);
+    }
+    75% {
+      transform: rotate(90deg) translate(-.25rem);
+    }
+  }
+  
 
 /* Media ---------------------------*/
 
@@ -880,7 +885,7 @@ footer {
     }
 
     .header-nav {
-        justify-content: space-around;
+        justify-content: flex-start;
     }
 
     .main {
@@ -1022,10 +1027,8 @@ footer {
 
     .projects__init-item, .projects__client-item {
         width: 100%;
-        height: 200px;
         padding: 20px;
         border-radius: 20px;
-        background: #6FA0DB;
     }
 
     .projects__long-text {
@@ -1044,5 +1047,17 @@ footer {
     .clients {
         padding-top: 0;
         padding-bottom: 10px;
+    }
+
+    .card h2 {
+        font-size: 1rem;
+    }
+
+    .card > .row > .icon {
+        margin: 15px 10px;
+    }
+
+    .clients {
+        padding: 10px 0;
     }
 }
