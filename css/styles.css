@@ -1081,13 +1081,14 @@ footer {
     .main__title-short-name {
         font-size: 1.4rem;
     }
-   
-    .slide_5 p {
-        font-size: 0.7rem;
-    }
 
     .slide_5 img {
         width: 20px;
+    }
+
+    .slide_5 .slide-content-item p {
+        font-size: 0.8rem;
+        margin-top: 5px;
     }
 
     .card > .row > .icon {
@@ -1127,10 +1128,6 @@ footer {
     #bullets label:nth-child(4):after {
         width: 50px;
         left: 43px;
-    }
-
-    .slide_5 p {
-        font-size: 0.8rem;
     }
 
     .projects__init-item, .projects__client-item {
