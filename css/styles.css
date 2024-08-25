@@ -264,7 +264,7 @@ input {
 
 .description p {
     color: #dddddd;
-    margin: -10px 0;
+    margin: -5px 0;
 }
 
 .wrapper__container input:checked + label {
@@ -993,7 +993,7 @@ footer {
         margin: 10px 0;
     }
 
-    .card h2 {
+    .card h3 {
         font-size: 1.1rem;
     }
 
@@ -1030,7 +1030,7 @@ footer {
     }
 
     .projects__title {
-        margin: 10px 0;
+        margin: 20px 0;
     }
 
     .projects__initiative, .projects__types {
@@ -1154,7 +1154,7 @@ footer {
         padding-bottom: 10px;
     }
 
-    .card h2 {
+    .card h3 {
         font-size: 1rem;
     }
 
