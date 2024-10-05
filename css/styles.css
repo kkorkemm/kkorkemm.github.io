@@ -709,6 +709,30 @@ input {
     
 }
 
+.media-item {
+    border: 1px solid #dddddd;
+}
+
+.media-item img {
+    width: 100%;
+}
+
+.media-item-text {
+    padding: 7px 20px 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.media-item-header {
+    font-family: 'Roboto-Bold';
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.media-item-link {
+    font-size: 0.9rem;
+}
+
 .media .container {
     position: relative;
 }
@@ -1048,7 +1072,7 @@ footer {
 
     .media__content-item {
         width: 90%;
-        height: 300px;
+        height: 350px;
     }
 
     footer {
@@ -1146,7 +1170,7 @@ footer {
     }
 
     .media__content-item {
-        height: 200px;
+        height: 230px;
     }
 
     .clients {
