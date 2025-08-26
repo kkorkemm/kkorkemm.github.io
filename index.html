@@ -623,6 +623,48 @@
     </div>
    </section>
 
+   <section class="laboratory" id="laboratory">
+    <div class="container">
+        <h2 class="container__title shiny">Научно-исследовательская лаборатория
+            <span class="sparkles" aria-hidden="true"></span>
+        </h2>
+        <div class="laboratory__content">
+            <p>
+                В ТОО «Научно-исследовательский центр комплексных транспортных проблем» состоялось торжественное открытие научно-исследовательской лаборатории. Её посетила делегация во главе с Председателем правления АО «НК «КТЖ» Алдыбергенов Т. С.
+                <br>
+                <br> Открытие лаборатории стало важным шагом в развитии научных исследований и внедрении инновационных технологий в железнодорожной отрасли.
+            </p>
+
+            <div class="laboratory__gallery">
+
+                <img class="laboratory__gallery-item" src="images/laboratory/1.jpg" alt="">
+                <img class="laboratory__gallery-item" src="images/laboratory/2.jpg" alt="">
+                <img class="laboratory__gallery-item" src="images/laboratory/3.jpg" alt="">
+                <img class="laboratory__gallery-item" src="images/laboratory/4.jpg" alt="">
+
+                <a class="prev_lab" onclick="plusSlides_lab(-1)">&#10094;</a>
+                <a class="next_lab" onclick="plusSlides_lab(1)">&#10095;</a>
+            </div>
+
+
+            <div class="laboratory__text">
+
+                <p>В рамках мероприятия были представлены разработки по следующим направлениям:</p>
+
+                <ol class="laboratory__grid">
+                    <li>цифровое локомотивное депо</li>
+                    <li>центр планирования и управления перевозками на диспетчерском участке</li>
+                    <li>цифровые бортовые системы магистральных локомотивов</li>
+                    <li>цифровые обучающие терминалы для локомотивных бригад и работников ремонтных предприятий</li>
+                    <li>диспетчерский центр управления перевозками на малодеятельных железнодорожных участках</li>
+                    <li>цифровая связь и средства сбора и передачи данных на железнодорожном транспорте</li>
+                </ol>
+            </div>
+
+        </div>
+    </div>
+   </section>
+
    <section class="media" id="media">
     <div class="container">
         <h2 class="container__title">Медиа</h2>
@@ -736,7 +778,29 @@ function showSlides(n) {
     slides[i].style.display = "none";
   }
   slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
+}
+
+// laboratory  ------------------------------------
+let slideIndex_lab = 1;
+showSlides_lab(slideIndex_lab);
+
+function plusSlides_lab(n) {
+  showSlides_lab(slideIndex_lab += n);
+}
+
+function currentSlide_lab(n) {
+  showSlides_lab(slideIndex_lab = n);
+}
+
+function showSlides_lab(n) {
+  let i;
+  let slides = document.getElementsByClassName("laboratory__gallery-item");
+  if (n > slides.length) {slideIndex_lab = 1}
+  if (n < 1) {slideIndex_lab = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[slideIndex_lab-1].style.display = "block";
 }
 
 // burger

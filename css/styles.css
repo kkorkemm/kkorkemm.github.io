@@ -5,6 +5,49 @@
     -webkit-tap-highlight-color: transparent;
 }
 
+:root{
+    --c1:#5930fa;
+    --c2:#b73aff;
+    --c3: #3a78ff;
+}
+
+.shiny{
+    font-size:clamp(40px, 10vw, 140px);
+    font-weight:900;
+    position:relative;
+    background:linear-gradient(120deg, var(--c1), var(--c2), var(--c3)) 0 0 / 200% 100%;
+    -webkit-background-clip:text;
+            background-clip:text;
+    -webkit-text-fill-color:transparent;
+    color:transparent;
+    animation:gradient-move 6s linear infinite;
+    overflow:hidden;
+  }
+
+  /* Блик */
+  .shiny::after{
+    content:"Открытие лаборатории";
+    position:absolute; inset:0;
+    background:linear-gradient(75deg,
+      transparent 0%,
+      white 50%,
+      transparent 100%);
+    width:20%; /* ширина блика */
+    transform:skewX(-20deg);
+    animation:shine 5s ease-in-out infinite;
+    mix-blend-mode:screen;
+    pointer-events:none;
+  }
+
+  @keyframes gradient-move{
+    to{background-position:200% 0;}
+  }
+
+  @keyframes shine{
+    from{left:-25%;}
+    to{left:125%;}
+  }
+
 *:focus {
     outline: none;
 }
@@ -695,6 +738,121 @@ input {
   }
   
 
+
+/* Laboratory --------------------*/
+
+.laboratory {
+    padding-bottom: 90px;
+    border-bottom: #6FA0DB 5px solid;
+    background-size: cover;
+}
+
+  .laboratory__gallery {
+    display: flex;
+    margin: 30px 0;
+    align-content: center;
+    justify-content: space-around;
+}
+
+.laboratory__gallery-item {
+    max-height: 600px;
+    
+}
+
+
+/* Сетка: 3 колонки (две строки при 6 элементах) */
+  .laboratory__grid{
+    counter-reset: item;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    gap: clamp(14px, 2.2vw, 22px);
+  }
+
+  .laboratory__grid > li{
+    position: relative;
+    background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01));
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 20px;
+    padding: 18px 18px 18px 70px; /* место под кружок */
+    box-shadow: 0 5px 15px rgba(0,0,0,.25);
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    min-height: 88px;
+    display: flex;
+    align-items: center;
+    font-size: smaller;
+  }
+
+  .laboratory__grid > li::before{
+    counter-increment: item;
+    content: counter(item);
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    display: grid;
+    place-items: center;
+    color: white;
+    background:
+      radial-gradient(120% 120% at 100% 0%, rgba(59,130,246,.5), transparent 60%),
+      #6FA0DB;
+    box-shadow: 0 6px 16px rgba(59,130,246,.35), inset 0 0 0 2px rgba(255,255,255,.12);
+  }
+
+  .laboratory__grid > li:hover{
+    transform: translateY(-2px);
+    border-color: rgba(59,130,246,.45);
+    box-shadow: 0 10px 28px rgba(59,130,246,.25), 0 2px 10px rgba(0,0,0,.35);
+  }
+
+  .laboratory__grid > li span{
+    color: var(--muted);
+  }
+
+.laboratory__content p {
+    margin: 20px 0;
+    font-size: smaller;
+    text-align: center;
+}
+
+.laboratory__text p {
+    margin: 30px 0;
+}
+
+.laboratory__gallery {
+    position: relative;
+}
+
+    .prev_lab, .next_lab {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    color: #aaaaaa;
+    font-weight: bold;
+    font-size: 2rem;
+    transition: 0.6s ease;
+    user-select: none;
+}
+  
+.prev_lab {
+    left: 50px;
+}
+
+.next_lab {
+    right: 50px;
+}
+  
+.prev_lab:hover, .next_lab:hover {
+    color: black;
+}
+
+
 /* Media ---------------------------*/
 
 .media__content {
@@ -866,6 +1024,14 @@ footer {
     }
 
     .next {
+        right: 0;
+    }
+
+    .prev_lab {
+        left: 0;
+    }
+
+    .next_lab {
         right: 0;
     }
     
@@ -1075,6 +1241,10 @@ footer {
         height: 350px;
     }
 
+     .laboratory__gallery-item {
+        max-height: 350px;
+    }
+
     footer {
         margin: 0;
         padding: 20px 0;
@@ -1141,6 +1311,10 @@ footer {
         font-size: 1.5rem;
     }
 
+    .next_lab, .prev_lab {
+        font-size: 1.5rem;
+    }
+
     #bullets label {
         width: 43px;
         height: 43px;
@@ -1173,6 +1347,10 @@ footer {
         height: 230px;
     }
 
+    .laboratory__gallery-item {
+        max-height: 230px;
+    }
+
     .clients {
         padding-top: 0;
         padding-bottom: 10px;
@@ -1190,3 +1368,12 @@ footer {
         padding: 10px 0;
     }
 }
+
+@media (max-width: 1100px){
+    .laboratory__grid{ grid-template-columns: repeat(2, minmax(220px, 1fr)); }
+  }
+  @media (max-width: 640px){
+    .laboratory__grid{ grid-template-columns: 1fr; }
+    .laboratory__grid > li{ padding-left: 56px; }
+    .laboratory__grid > li::before{ width: 36px; height: 36px; font-size: 16px; left: 12px; }
+  }
