@@ -815,9 +815,13 @@ input {
   }
 
 .laboratory__content p {
-    margin: 20px 0;
+    margin: 20px 10px;
     font-size: smaller;
     text-align: center;
+}
+
+.laboratory__content span {
+    margin: 20px 30px;
 }
 
 .laboratory__text p {
