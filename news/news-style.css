@@ -1,3 +1,4 @@
+
 .news__content a {
      text-decoration: none;
     color: #7f8c8d;
@@ -259,11 +260,18 @@
 }
 
 /* Адаптивность */
-@media (max-width: 768px) {
+@media (max-width: 1050px) {
     .news-grid {
         grid-template-columns: 1fr;
     }
-    
+}
+
+@media (max-width: 768px) {
+
+    footer {
+        margin-top: 20px;
+    }
+
     .news-card {
         height: auto;
         padding: 20px;
