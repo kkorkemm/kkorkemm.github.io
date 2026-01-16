@@ -1,0 +1,49 @@
+backend:
+  name: github
+  repo: kkorkemm/kkorkemm.github.io
+  branch: main
+  base_url: https://nic-ktp.com
+  auth_scope: repo
+  app_id: 6fcbf0473a37df7f3c16edd5b015ea65f7e3c8a8
+
+# Режим черновиков для безопасности
+publish_mode: editorial_workflow
+
+# Медиафайлы
+media_folder: "news/news-media"  # относительно корня репозитория
+public_folder: "/news/news-media"
+
+collections:
+  - name: "news"
+    label: "Новости"
+    folder: "news/_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    
+    fields:
+      - {label: "ID новости", name: "id", widget: "string", pattern: ["news-\\d+", "Должно быть news-1, news-2 и т.д."]}
+      - {label: "Заголовок", name: "title", widget: "string"}
+      - {label: "Дата", name: "date", widget: "datetime", date_format: "DD MMMM YYYY", time_format: false}
+      - {label: "Автор", name: "author", widget: "string", default: "Асем Жардемова"}
+      
+      - label: "Медиафайлы"
+        name: "media"
+        widget: "list"
+        summary: "{{fields.type}}: {{fields.src}}"
+        fields:
+          - label: "Тип файла"
+            name: "type"
+            widget: "select"
+            options: ["image", "video"]
+            default: "image"
+          
+          - label: "Файл"
+            name: "src"
+            widget: "file"
+            media_folder: "news/news-media"
+            public_folder: "/news/news-media"
+            choose_url: false
+          
+          - {label: "Подпись", name: "caption", widget: "string", required: false}
+      
+      - {label: "Содержание", name: "body", widget: "markdown"}

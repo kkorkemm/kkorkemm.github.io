@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Админка новостей | НИЦ КТП </title>
+  <style>
+    /* Скрываем от индексации */
+    html { 
+      display: none; 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+  </style>
+  <script>
+    // Базовые проверки безопасности
+    if (window.location.hostname === 'kkorkemm.github.io' || 
+        window.location.hostname === 'nic-ktp.com') {
+      document.documentElement.style.display = 'block';
+    } else {
+      document.body.innerHTML = '<h1>Доступ запрещен</h1>';
+    }
+  </script>
+</head>
+<body>
+  <!-- Контейнер для Decap CMS -->
+  <div id="nc-root"></div>
+  
+  <!-- ЭТОТ СКРИПТ ДОБАВЛЯЕТ ЗАЩИЩЕННУЮ ФОРМУ -->
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  
+  <!-- Опционально: кастомные стили -->
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    /* Можно стилизовать админку под ваш бренд */
+  </style>
+</body>
+</html>
