@@ -3,21 +3,24 @@
 <head>
     <script>
         // GitHub возвращает сюда после авторизации
-        // Перенаправляем в админку с правильным хэшем
         const params = new URLSearchParams(window.location.search);
         const code = params.get('code');
         const state = params.get('state');
         
+        console.log('Callback received. Code:', code ? 'YES' : 'NO');
+        
         if (code && state) {
-            // Правильный формат для Decap CMS
-            window.location.href = `https://nic-ktp.com/news/admin/#/auth?code=${code}&state=${state}`;
+            // ПРАВИЛЬНЫЙ ФОРМАТ: параметры в query string, не в hash!
+            const redirectUrl = `https://nic-ktp.com/news/admin/?code=${code}&state=${state}`;
+            console.log('Redirecting to:', redirectUrl);
+            window.location.href = redirectUrl;
         } else {
-            // Просто на главную админки
+            console.log('No auth parameters, going to admin');
             window.location.href = 'https://nic-ktp.com/news/admin/';
         }
     </script>
 </head>
 <body>
-    <p>Перенаправление в админку...</p>
+    <p>Обработка авторизации GitHub...</p>
 </body>
 </html>

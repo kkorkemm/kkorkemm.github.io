@@ -13,19 +13,44 @@
 <body>
     <div id="nc-root"></div>
     
+     <script>
+        // Обработка OAuth callback ПРЯМО ЗДЕСЬ
+        const urlParams = new URLSearchParams(window.location.search);
+        const code = urlParams.get('code');
+        const state = urlParams.get('state');
+        
+        if (code && state) {
+            // Сохраняем code и убираем из URL
+            sessionStorage.setItem('github-code', code);
+            sessionStorage.setItem('github-state', state);
+            
+            // Убираем параметры из URL без перезагрузки
+            const cleanUrl = window.location.origin + window.location.pathname;
+            window.history.replaceState({}, document.title, cleanUrl);
+        }
+    </script>
+
     <!-- Сначала наш скрипт -->
     <script src="/news/admin/cms.js"></script>
     <!-- Потом Decap CMS -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
     
-    <script>
-        // Принудительная загрузка
-        document.body.classList.add('loaded');
+     <script>
+        // Передаем code в Decap CMS если есть
+        const savedCode = sessionStorage.getItem('github-code');
+        const savedState = sessionStorage.getItem('github-state');
         
-        // Очистка старого состояния
-        if (window.location.search.includes('force')) {
-            localStorage.removeItem('netlify-cms-user');
-            localStorage.removeItem('github.settings');
+        if (savedCode && savedState) {
+            // Если Decap уже загрузился, инициируем auth
+            if (window.CMS) {
+                window.CMS.auth.completeAuth({
+                    code: savedCode,
+                    state: savedState
+                });
+            }
+            // Очищаем после использования
+            sessionStorage.removeItem('github-code');
+            sessionStorage.removeItem('github-state');
         }
     </script>
 </body>
