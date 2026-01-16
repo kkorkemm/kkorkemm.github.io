@@ -3,6 +3,7 @@ backend:
   repo: kkorkemm/kkorkemm.github.io
   branch: main
   base_url: https://nic-ktp.com
+  site_domain: nic-ktp.com
   auth_scope: repo
   app_id: 6fcbf0473a37df7f3c16edd5b015ea65f7e3c8a8
 
