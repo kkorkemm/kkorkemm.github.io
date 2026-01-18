@@ -1,0 +1,13 @@
+# Редирект для админки
+[[redirects]]
+  from = "https://nic-ktp.com/admin/*"
+  to = "https://admin.nic-ktp.com/:splat"
+  status = 301
+  force = true
+
+# Основная админка
+[[redirects]]
+  from = "https://admin.nic-ktp.com/*"
+  to = "https://admin.nic-ktp.com/admin/index.html"
+  status = 200
+  force = true

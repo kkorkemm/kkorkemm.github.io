@@ -3,47 +3,86 @@ backend:
   repo: kkorkemm/kkorkemm.github.io
   branch: main
   site_domain: nic-ktp.com
-  auth_scope: repo
-  app_id: Ov23lizJaxcNgHAO46ro
 
-# Режим черновиков для безопасности
+# Локализация (русский интерфейс)
+locale: 'ru'
+
+# Настройки медиа
+media_folder: "news-media" # Папка для загрузки изображений
+public_folder: "/news-media" # Публичный URL
+
+# Режим публикации (с черновиками)
 publish_mode: editorial_workflow
+site_url: "https://nic-ktp.com"
 
-# Медиафайлы
-media_folder: "news/news-media"  # относительно корня репозитория
-public_folder: "/news/news-media"
+# Настройки редактора
+editor:
+  preview: false # Отключаем предпросмотр, если не настроен
 
+# Коллекция новостей
 collections:
   - name: "news"
     label: "Новости"
-    folder: "news/_posts"
+    label_singular: "Новость"
+    folder: "_posts/news" # Укажите вашу папку с новостями
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    frontmatter_delimiter: ["---", "---"]
     
+    # Сортировка по дате (новые сверху)
+    sortable_fields: ["date"]
+    sort_dir: "descending"
+    
+    # Поля (соответствуют вашему формату)
     fields:
-      - {label: "ID новости", name: "id", widget: "string", pattern: ["news-\\d+", "Должно быть news-1, news-2 и т.д."]}
-      - {label: "Заголовок", name: "title", widget: "string"}
-      - {label: "Дата", name: "date", widget: "datetime", date_format: "DD MMMM YYYY", time_format: false}
-      - {label: "Автор", name: "author", widget: "string", default: "Асем Жардемова"}
+      # Обязательное поле ID
+      - label: "ID"
+        name: "id"
+        widget: "string"
+        pattern: ["^[a-z0-9\\-]+$", "Только латиница, цифры и дефисы"]
+        hint: "Уникальный идентификатор, например: news-1"
+        required: true
       
-      - label: "Медиафайлы"
+      # Заголовок
+      - label: "Заголовок"
+        name: "title"
+        widget: "string"
+        required: true
+      
+      # Дата публикации
+      - label: "Дата публикации"
+        name: "date"
+        widget: "datetime"
+        date_format: "DD.MM.YYYY"
+        time_format: false
+        format: "YYYY-MM-DD"
+        required: true
+      
+      # Автор
+      - label: "Автор"
+        name: "author"
+        widget: "string"
+        required: true
+      
+      # Медиа-файлы (галерея)
+      - label: "Медиа (изображения)"
         name: "media"
         widget: "list"
-        summary: "{{fields.type}}: {{fields.src}}"
+        allow_add: true
+        allow_delete: true
+        collapsed: true
+        summary: "{{fields.src}}"
         fields:
-          - label: "Тип файла"
-            name: "type"
-            widget: "select"
-            options: ["image", "video"]
-            default: "image"
-          
-          - label: "Файл"
-            name: "src"
-            widget: "file"
-            media_folder: "news/news-media"
-            public_folder: "/news/news-media"
-            choose_url: false
-          
-          - {label: "Подпись", name: "caption", widget: "string", required: false}
+          - { label: "Тип", name: "type", widget: "hidden", default: "image" }
+          - { label: "Файл", name: "src", widget: "image" }
+          - { label: "Подпись", name: "caption", widget: "string", required: false }
       
-      - {label: "Содержание", name: "body", widget: "markdown"}
+      # Основной текст
+      - label: "Содержание"
+        name: "body"
+        widget: "markdown"
+        required: true
+        buttons: ["bold", "italic", "link", "heading-two", "heading-three", "quote", "bulleted-list", "numbered-list"]
+        editor_components: []

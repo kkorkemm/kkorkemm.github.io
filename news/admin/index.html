@@ -1,57 +1,89 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Админка новостей</title>
-    <style>
-        /* Скрываем до загрузки */
-        body { opacity: 0; }
-        body.loaded { opacity: 1; transition: opacity 0.3s; }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Админка новостей</title>
+  <!-- Netlify Identity для аутентификации -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <!-- Стили для красивого интерфейса -->
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    .login-wrapper { 
+      max-width: 400px; margin: 100px auto; padding: 20px; 
+      text-align: center; 
+    }
+    .login-btn {
+      background: #00c7b7; color: white; padding: 12px 24px;
+      border: none; border-radius: 4px; cursor: pointer;
+      font-size: 16px; margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
-    <div id="nc-root"></div>
+  <!-- Контейнер для CMS -->
+  <div id="ncms-root"></div>
+  
+  <!-- Netlify CMS -->
+  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+  
+  <!-- Скрипт для обработки аутентификации -->
+  <script>
+    // Автоматический вход после аутентификации
+    if (window.location.hash) {
+      const hash = window.location.hash.substring(1);
+      const params = new URLSearchParams(hash);
+      if (params.get('access_token')) {
+        localStorage.setItem('netlify-cms-user', JSON.stringify({
+          token: params.get('access_token'),
+          expires_at: Date.now() + (params.get('expires_in') * 1000)
+        }));
+        window.location.hash = '';
+      }
+    }
     
-     <script>
-        // Обработка OAuth callback ПРЯМО ЗДЕСЬ
-        const urlParams = new URLSearchParams(window.location.search);
-        const code = urlParams.get('code');
-        const state = urlParams.get('state');
-        
-        if (code && state) {
-            // Сохраняем code и убираем из URL
-            sessionStorage.setItem('github-code', code);
-            sessionStorage.setItem('github-state', state);
-            
-            // Убираем параметры из URL без перезагрузки
-            const cleanUrl = window.location.origin + window.location.pathname;
-            window.history.replaceState({}, document.title, cleanUrl);
-        }
-    </script>
+    // Проверка авторизации
+    if (!localStorage.getItem('netlify-cms-user')) {
+      document.body.innerHTML = `
+        <div class="login-wrapper">
+          <h1>Админ-панель новостей</h1>
+          <p>Требуется авторизация через GitHub</p>
+          <button class="login-btn" onclick="login()">Войти через GitHub</button>
+        </div>
+      `;
+    }
+    
+    function login() {
+      const clientId = 'ВАШ_CLIENT_ID'; // Получите на GitHub
+      const redirectUri = encodeURIComponent(window.location.origin + '/admin/');
+      const scope = encodeURIComponent('repo');
+      window.location.href = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scope}`;
+    }
 
-    <!-- Сначала наш скрипт -->
-    <script src="/news/admin/cms.js"></script>
-    <!-- Потом Decap CMS -->
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-    
-     <script>
-        // Передаем code в Decap CMS если есть
-        const savedCode = sessionStorage.getItem('github-code');
-        const savedState = sessionStorage.getItem('github-state');
+
+        // В admin/index.html перед загрузкой CMS
+    CMS.registerEventListener({
+    name: 'preSave',
+    handler: ({ entry }) => {
+        const data = entry.get('data');
         
-        if (savedCode && savedState) {
-            // Если Decap уже загрузился, инициируем auth
-            if (window.CMS) {
-                window.CMS.auth.completeAuth({
-                    code: savedCode,
-                    state: savedState
-                });
-            }
-            // Очищаем после использования
-            sessionStorage.removeItem('github-code');
-            sessionStorage.removeItem('github-state');
+        // Автогенерация ID если пустой
+        if (!data.get('id')) {
+        const title = data.get('title');
+        const id = title
+            .toLowerCase()
+            .replace(/[^\w\s]/gi, '')
+            .replace(/\s+/g, '-')
+            .substring(0, 50);
+        
+        return entry.get('data').set('id', `news-${id}`);
         }
-    </script>
+        
+        return data;
+    }
+    });
+
+  </script>
 </body>
 </html>
