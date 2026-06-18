@@ -1,0 +1,45 @@
+[33mcommit b57d0f5d6350f7b11a3d22815ee4c358346b6f4a[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: kkorkemm <zhardemova2012@mail.ru>
+Date:   Mon Mar 2 23:06:47 2026 +0700
+
+    адрес
+
+[1mdiff --git a/index.html b/index.html[m
+[1mindex 7122111..62ad35f 100644[m
+[1m--- a/index.html[m
+[1m+++ b/index.html[m
+[36m@@ -737,7 +737,7 @@[m
+             <div class="footer__text">[m
+                 <meta itemprop="name" content="Научно-исследовательский центр комплексных транспортных проблем (НИЦ КТП)">[m
+                 <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">[m
+[31m-                    <p><span itemprop="addressCountry">Республика Казахстан,</span> 010000, <span  itemprop="addressLocality">г. Астана,</span> <span itemprop="streetAddress">Сығанақ, 60/5, [m
+[32m+[m[32m                    <p><span itemprop="addressCountry">Республика Казахстан,</span> 010000, <span  itemprop="addressLocality">г. Астана,</span> <span itemprop="streetAddress">Сығанақ, 60/4,[m[41m [m
+ БЦ «Abu Dhabi Plaza», офис 504</span></p>[m
+                 </div>[m
+                 <p>email: <span itemprop="email"><a href="mailto: contact@nic-ktp.com">contact@nic-ktp.com</a></span></p>[m
+[1mdiff --git a/news/news-item.html b/news/news-item.html[m
+[1mindex ea7678d..65b58a1 100644[m
+[1m--- a/news/news-item.html[m
+[1m+++ b/news/news-item.html[m
+[36m@@ -66,7 +66,7 @@[m
+             <div class="footer__text">[m
+                 <meta itemprop="name" content="Научно-исследовательский центр комплексных транспортных проблем (НИЦ КТП)">[m
+                 <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">[m
+[31m-                    <p><span itemprop="addressCountry">Республика Казахстан,</span> 010000, <span  itemprop="addressLocality">г. Астана,</span> <span itemprop="streetAddress">Сығанақ, 60/5, [m
+[32m+[m[32m                    <p><span itemprop="addressCountry">Республика Казахстан,</span> 010000, <span  itemprop="addressLocality">г. Астана,</span> <span itemprop="streetAddress">Сығанақ, 60/4,[m[41m [m
+ БЦ «Abu Dhabi Plaza», офис 504</span></p>[m
+                 <p>email: <span itemprop="email"><a href="mailto: contact@nic-ktp.com">contact@nic-ktp.com</a></span></p>[m
+             </div>[m
+[1mdiff --git a/news/news.html b/news/news.html[m
+[1mindex b530152..110a854 100644[m
+[1m--- a/news/news.html[m
+[1m+++ b/news/news.html[m
+[36m@@ -48,7 +48,7 @@[m
+             <div class="footer__text">[m
+                 <meta itemprop="name" content="Научно-исследовательский центр комплексных транспортных проблем (НИЦ КТП)">[m
+                 <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">[m
+[31m-                    <p><span itemprop="addressCountry">Республика Казахстан,</span> 010000, <span  itemprop="addressLocality">г. Астана,</span> <span itemprop="streetAddress">Сығанақ, 60/5, [m
+[32m+[m[32m                    <p><span itemprop="addressCountry">Республика Казахстан,</span> 010000, <span  itemprop="addressLocality">г. Астана,</span> <span itemprop="streetAddress">Сығанақ, 60/4,[m[41m [m
+ БЦ «Abu Dhabi Plaza», офис 504</span></p>[m
+                 </div>[m
+                 <p>email: <span itemprop="email"><a href="mailto: contact@nic-ktp.com">contact@nic-ktp.com</a></span></p>[m
