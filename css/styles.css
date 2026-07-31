@@ -1350,6 +1350,14 @@ footer {
         margin-left: 20px;
     }
 
+    .book__authors {
+        font-size: 1rem;
+    }
+
+    .book__title {
+        font-size: 1.2rem;
+    }
+
     .book__info {
         width: 85%;
         margin: 30px auto;     
@@ -1357,11 +1365,11 @@ footer {
     
     .book__details {
         flex-direction: column;
-        justify-content: space-beetween;
+        padding: 10px 0;
     }
 
     .book__details-el {
-        margin: 20px;
+        margin: 10px 0;
     }
 
     .el-title {
@@ -1404,6 +1412,7 @@ footer {
         width: 30px;
     }
 }
+
 
 
 @media screen and (max-width: 440px) {
