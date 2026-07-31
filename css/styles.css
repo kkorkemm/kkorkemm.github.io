@@ -859,6 +859,86 @@ input {
 /* News ---------------------------*/
 
 
+/* Book --------------------*/
+
+.book__content {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #E46C0A;
+    border-radius: 50px;
+    box-shadow: 0 0 50px #f78a303c;
+
+}
+
+.book_image img {
+    width: 300px;
+    margin: 50px 30px;
+    align-self: center;
+}
+
+.book_image {
+    display: block;
+    align-content: center;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 50px 0 0 50px;
+}
+
+.book__info {
+    display: flex;
+    flex-direction: column;
+    margin: 50px 80px;
+}
+
+.book__authors {
+    color: #E46C0A;
+    font-size: 1.2rem;
+}
+
+.book__title {
+    font-size: 1.6rem;
+    margin: 20px 0;
+    line-height: 1.2;
+}
+
+.book__text {
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+.book__text span {
+    color: #E46C0A;
+    font-weight: bold;
+}
+
+.book__text a {
+    color: #E46C0A;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.book__details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-top: 1px solid #d8d8d8;
+    padding-top: 20px;
+}
+
+.el-title {
+    font-family: 'Roboto-Light';
+    font-size: 0.9rem;
+    height: 50px;
+    width: 120px;
+}
+
+.el-text {
+    font-family: 'Roboto-Bold';
+    font-size: 0.9rem;
+}
+
 /* Media ---------------------------*/
 
 .media__content {
@@ -1063,6 +1143,15 @@ footer {
     #footer__years {
         margin: 0 5px;
     }
+
+    .book__content {
+        flex-direction: column;
+    }
+
+    .book_image {
+        width: 100%;
+        border-radius: 50px 50px 0 0;
+    }
 }
 
 /* 901 - 992 */
@@ -1259,6 +1348,26 @@ footer {
 
     .footer__info {
         margin-left: 20px;
+    }
+
+    .book__info {
+        width: 85%;
+        margin: 30px auto;     
+    }
+    
+    .book__details {
+        flex-direction: column;
+        justify-content: space-beetween;
+    }
+
+    .book__details-el {
+        margin: 20px;
+    }
+
+    .el-title {
+        width: 100%;
+        height: auto;
+        margin: 5px 0;
     }
 
 }
